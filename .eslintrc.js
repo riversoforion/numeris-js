@@ -24,8 +24,8 @@ module.exports = {
   overrides: [
     {
       files: [
-        "tests/**/*.test.js",
-        "tests/**/*.test.ts",
+        "src/**/*.spec.js",
+        "src/**/*.spec.ts",
       ],
       env: {
         "jest/globals": true,
@@ -36,4 +36,11 @@ module.exports = {
       },
     },
   ],
+  settings: {
+    "import/resolver": {
+      node: {
+        extensions: ['.js', '.ts']
+      },
+    },
+  },
 };
