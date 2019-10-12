@@ -40,16 +40,9 @@ function digitExtractor(seed: number): false | [number, number] {
   return [digit, seed - digit];
 }
 
-export function toRoman(val: number): string {
+export default function integerToRoman(val: number): string {
   checkNumberValue(val);
   return unfold(digitExtractor, val)
     .map((digit: number) => DIGITS_TO_NUMERALS.get(digit))
     .join('');
-}
-
-export function fromRoman(val: string): number {
-  if (val === 'I') {
-    return 1;
-  }
-  return 0;
 }

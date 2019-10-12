@@ -1,9 +1,9 @@
-import { fromRoman } from './roman';
+import romanToInteger from './romanToInteger';
 
 describe('roman to integer tests', () => {
   describe('simple numerals', () => {
     test('converts I to 1', () => {
-      expect(fromRoman('I')).toEqual(1);
+      expect(romanToInteger('I')).toEqual(1);
     });
 
     test('converts V to 5', () => {
