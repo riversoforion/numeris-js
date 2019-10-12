@@ -1,6 +1,6 @@
-import romanNumeral from './index';
-import integerToRoman, { MAX_VALUE, MIN_VALUE } from './integerToRoman';
-import romanToInteger from './romanToInteger';
+import { romanNumeral } from './index';
+import { integerToRoman, MAX_VALUE, MIN_VALUE } from './integerToRoman';
+import { romanToInteger } from './romanToInteger';
 
 describe('module loading', () => {
   test('module correctly aliases functions', () => {

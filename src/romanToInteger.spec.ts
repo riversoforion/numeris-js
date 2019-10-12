@@ -1,4 +1,4 @@
-import romanToInteger from './romanToInteger';
+import { romanToInteger } from './romanToInteger';
 
 describe('roman to integer tests', () => {
   describe('simple numerals', () => {

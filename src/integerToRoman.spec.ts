@@ -1,4 +1,4 @@
-import integerToRoman, { MAX_VALUE, MIN_VALUE } from './integerToRoman';
+import { integerToRoman, MAX_VALUE, MIN_VALUE } from './integerToRoman';
 
 describe('integer to roman tests', () => {
   describe('simple numerals', () => {
