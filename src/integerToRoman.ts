@@ -3,6 +3,7 @@
  * @module
  */
 import unfold from 'ramda/src/unfold';
+import { ROMAN_NUMERALS } from './lib';
 
 /**
  * Minimum supported value for converting to a Roman numeral.
@@ -13,22 +14,10 @@ export const MIN_VALUE = 1;
  */
 export const MAX_VALUE = 3999;
 
-const DIGITS_TO_NUMERALS: Map<number, string> = new Map<number, string>([
-  [1000, 'M'],
-  [900, 'CM'],
-  [500, 'D'],
-  [400, 'CD'],
-  [100, 'C'],
-  [90, 'XC'],
-  [50, 'L'],
-  [40, 'XL'],
-  [10, 'X'],
-  [9, 'IX'],
-  [5, 'V'],
-  [4, 'IV'],
-  [1, 'I'],
-]);
-const DIGITS: number[] = Array.from(DIGITS_TO_NUMERALS.keys());
+const DIGITS_TO_NUMERALS = new Map<number, string>(
+  ROMAN_NUMERALS.map((numeral) => [numeral.value, numeral.symbol]),
+);
+const DIGITS: number[] = ROMAN_NUMERALS.map((numeral) => numeral.value);
 
 function checkNumberValue(val: number): void {
   if (val < MIN_VALUE) {
