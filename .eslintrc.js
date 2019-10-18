@@ -20,6 +20,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    "brace-style": ["error", "stroustrup"],
     "import/prefer-default-export": "off"
   },
   overrides: [
