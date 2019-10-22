@@ -3,21 +3,15 @@
  * @module
  */
 import unfold from 'ramda/src/unfold';
-import { ROMAN_NUMERALS } from './lib';
+import { ALL_ROMAN_NUMERALS } from './lib/RomanNumeral';
 
-/**
- * Minimum supported value for converting to a Roman numeral.
- */
-export const MIN_VALUE = 1;
-/**
- * Maximum supported value for converting to a Roman numeral.
- */
-export const MAX_VALUE = 3999;
+const MIN_VALUE = 1;
+const MAX_VALUE = 3999;
 
 const DIGITS_TO_NUMERALS = new Map<number, string>(
-  ROMAN_NUMERALS.map((numeral) => [numeral.value, numeral.symbol]),
+  ALL_ROMAN_NUMERALS.map((numeral) => [numeral.value, numeral.symbol]),
 );
-const DIGITS: number[] = ROMAN_NUMERALS.map((numeral) => numeral.value);
+const DIGITS: number[] = ALL_ROMAN_NUMERALS.map((numeral) => numeral.value);
 
 function checkNumberValue(val: number): void {
   if (val < MIN_VALUE) {

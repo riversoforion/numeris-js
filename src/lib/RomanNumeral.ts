@@ -4,7 +4,7 @@ export interface RomanNumeral {
   allowMultiples: boolean;
 }
 
-export const ROMAN_NUMERALS: RomanNumeral[] = [
+export const ALL_ROMAN_NUMERALS: RomanNumeral[] = [
   { value: 1000, symbol: 'M', allowMultiples: true },
   { value: 900, symbol: 'CM', allowMultiples: false },
   { value: 500, symbol: 'D', allowMultiples: false },

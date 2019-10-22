@@ -3,7 +3,7 @@
  * @module
  */
 // eslint-disable-next-line no-unused-vars
-import { ROMAN_NUMERALS, RomanNumeral } from './lib';
+import { ALL_ROMAN_NUMERALS, RomanNumeral } from './lib/RomanNumeral';
 
 function normalizeNumeralValue(numeral: string): string {
   return numeral.trim().toUpperCase();
@@ -19,7 +19,7 @@ function checkNumeralValue(numeral: string): void {
 }
 
 class ParseState {
-  private remainingNumerals = [...ROMAN_NUMERALS];
+  private remainingNumerals = [...ALL_ROMAN_NUMERALS];
 
   private remainingToParse: string;
 
@@ -74,7 +74,6 @@ function decomposeNumeral(numeral: string): number[] {
  * Convert the given Roman numeral to an integer.
  * @param numeral
  */
-// eslint-disable-next-line import/prefer-default-export
 export function romanToInteger(numeral: string): number {
   const normalized = normalizeNumeralValue(numeral);
   checkNumeralValue(normalized);
