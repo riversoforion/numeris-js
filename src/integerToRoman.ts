@@ -5,8 +5,14 @@
 import unfold from 'ramda/src/unfold';
 import { ALL_ROMAN_NUMERALS } from './lib/RomanNumeral';
 
-const MIN_VALUE = 1;
-const MAX_VALUE = 3999;
+/**
+ * Minimum supported value for converting to a Roman numeral.
+ */
+export const MIN_VALUE = 1;
+/**
+ * Maximum supported value for converting to a Roman numeral.
+ */
+export const MAX_VALUE = 3999;
 
 const DIGITS_TO_NUMERALS = new Map<number, string>(
   ALL_ROMAN_NUMERALS.map((numeral) => [numeral.value, numeral.symbol]),
