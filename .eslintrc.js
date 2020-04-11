@@ -20,28 +20,37 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-    "brace-style": ["error", "stroustrup"],
-    "import/prefer-default-export": "off"
+    'brace-style': ['error', 'stroustrup'],
+    'import/prefer-default-export': 'off',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        'js': 'never',
+        'jsx': 'never',
+        'ts': 'never',
+        'tsx': 'never',
+      },
+    ],
   },
   overrides: [
     {
       files: [
-        "src/**/*.spec.js",
-        "src/**/*.spec.ts",
+        'src/**/*.spec.js',
+        'src/**/*.spec.ts',
       ],
       env: {
-        "jest/globals": true,
+        'jest/globals': true,
       },
-      plugins: ["jest"],
-      extends: ["plugin:jest/recommended"],
-      rules: {
-      },
+      plugins: ['jest'],
+      extends: ['plugin:jest/recommended'],
+      rules: {},
     },
   ],
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       node: {
-        extensions: ['.js', '.ts']
+        extensions: ['.js', '.ts'],
       },
     },
   },
