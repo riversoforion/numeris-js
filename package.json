@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "author": "Eric McIntyre <mac@riversoforion.com>",
   "license": "MIT",
-  "main": "index.js",
+  "main": "./dist/cli/index.js",
   "bin": {
-    "romanus": "./src/cli/index.ts"
+    "romanus": "./bin/romanus"
   },
   "scripts": {
     "lint": "eslint --ext .js,.ts ./",
@@ -14,7 +14,7 @@
     "build": "tsc -p .",
     "clean": "rm -rf dist/ coverage/",
     "cli:start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/cli/index.ts",
-    "cli:test": "romanus"
+    "cli:test": "./bin/romanus"
   },
   "devDependencies": {
     "@types/jest": "^24.0.18",
