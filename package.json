@@ -1,16 +1,24 @@
 {
-  "name": "roman-numerals",
+  "name": "romanus",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "Eric McIntyre <mac@riversoforion.com>",
   "license": "MIT",
+  "main": "index.js",
+  "bin": {
+    "romanus": "./src/cli/index.ts"
+  },
   "scripts": {
     "lint": "eslint --ext .js,.ts ./",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "build": "tsc -p .",
+    "clean": "rm -rf dist/ coverage/",
+    "cli:start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/cli/index.ts",
+    "cli:test": "romanus"
   },
   "devDependencies": {
     "@types/jest": "^24.0.18",
+    "@types/node": "^13.11.1",
     "@types/ramda": "^0.26.29",
     "@typescript-eslint/eslint-plugin": "^2.3.2",
     "@typescript-eslint/parser": "^2.3.2",
@@ -19,10 +27,14 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.17.0",
     "jest": "^24.9.0",
+    "nodemon": "^2.0.3",
     "ts-jest": "^24.1.0",
+    "ts-node": "^8.8.2",
     "typescript": "^3.6.3"
   },
   "dependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^5.0.0",
     "ramda": "^0.26.1"
   }
 }
