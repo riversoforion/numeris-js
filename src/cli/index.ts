@@ -5,8 +5,8 @@ import { integerToRoman, romanToInteger } from '../index';
 const { Command } = require('commander');
 
 const VERSION = process.env.npm_package_version;
-const EXIT_BAD_ARGS = 1;
-const EXIT_BAD_INPUT = 2;
+const exitBadArgs = () => process.exit(1);
+const exitBadInput = () => process.exit(2);
 
 const program = new Command();
 program
@@ -25,7 +25,7 @@ const color = new chalk.Instance({
 
 if (!program.integer && !program.roman) {
   console.error(color`{red {bold.inverse ERROR:} Must specify one of --integer or --roman}`);
-  process.exit(EXIT_BAD_ARGS);
+  exitBadArgs();
 }
 
 if (program.debug) {
@@ -44,5 +44,5 @@ try {
 catch (error) {
   const ERROR_PREFIX = program.bare ? '' : color`{bold.inverse ERROR:} `;
   console.error(color`{red ${ERROR_PREFIX}${error.message}}`);
-  process.exit(EXIT_BAD_INPUT);
+  exitBadInput();
 }
