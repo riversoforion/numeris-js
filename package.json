@@ -9,15 +9,17 @@
     "romanus": "./bin/romanus"
   },
   "scripts": {
-    "clean": "rm -rf dist/ coverage/",
+    "clean": "yarpm run cli:uninstall && rm -rf dist/ coverage/",
     "lint": "eslint --ext .js,.ts ./",
     "test": "jest",
     "coverage": "jest --coverage",
     "build:compile": "tsc -p .",
-    "build:full": "yarpm run clean && yarpm run coverage && yarpm run build:compile",
-    "build": "yarpm run build:compile",
+    "build:full": "yarpm run clean && yarpm run lint && yarpm run coverage && yarpm run build:compile",
+    "build": "yarpm run lint && yarpm run build:compile",
     "cli:start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/cli/index.ts",
-    "cli:test": "./bin/romanus"
+    "cli:test": "./bin/romanus",
+    "cli:install":  "yarpm run build:full && yarpm link",
+    "cli:uninstall": "yarpm unlink"
   },
   "devDependencies": {
     "@types/jest": "^24.0.18",
