@@ -1,4 +1,4 @@
-# Romanu: JavaScript implementation
+# Romanus: JavaScript implementation
 
 *TODO: CI & NPM links*
 
