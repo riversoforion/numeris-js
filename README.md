@@ -1,8 +1,8 @@
-# Romanus: JavaScript implementation
+# Numeris: JavaScript implementation
 
 *TODO: CI & NPM links*
 
-The JavaScript implementation of Romanus is actually implemented in TypeScript.
+The JavaScript implementation of Numeris is actually implemented in TypeScript.
 This gives it full JavaScript compatibility, as well as type information for
 TypeScript clients.
 
@@ -11,7 +11,7 @@ TypeScript clients.
 ###### ES6 modules/TypeScript
 
 ```js
-import { integerToRoman, romanToInteger } from 'romanus';
+import { integerToRoman, romanToInteger } from 'numeris';
 
 const intVal = romanToInteger('CXXVI');
 const numeral = integerToRoman(932);
@@ -20,7 +20,7 @@ const numeral = integerToRoman(932);
 ###### Node.js/CommonJS
 
 ```js
-const { integerToRoman, romanToInteger } = require('romanus');
+const { integerToRoman, romanToInteger } = require('numeris');
 
 const intVal = romanToInteger('CXXVI');
 const numeral = integerToRoman(932);
@@ -28,22 +28,22 @@ const numeral = integerToRoman(932);
 
 ## Command Line Usage
 
-Install the Romanus package globally:
+Install the Numeris package globally:
 
 ```
 # NPM
-$ npm i -g romanus
+$ npm i -g numeris
 # Yarn
-$ yarn global add romanus
+$ yarn global add numeris
 ```
 
-If the above command installs Romanus somewhere in the user's path, then it can
+If the above command installs Numeris somewhere in the user's path, then it can
 be run directly:
 
 ```
-$ romanus --integer 139
+$ numeris --integer 139
 RESULT: CXXXIX
-$ romanus --roman MDCII
+$ numeris --roman MDCII
 RESULT: 1602
 ```
 
@@ -51,7 +51,7 @@ Use the `-h` or `--help` flag to see all options.
 
 ## Development
 
-Romanus is a straightforward TypeScript project. Yarn is the build tool of
+Numeris is a straightforward TypeScript project. Yarn is the build tool of
 choice, but NPM should work the same way.
 
 The following scripts in `package.json` will help with development:

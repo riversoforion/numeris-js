@@ -1,12 +1,12 @@
 {
-  "name": "romanus",
+  "name": "numeris",
   "version": "1.0.0",
   "author": "Eric McIntyre <mac@riversoforion.com>",
   "license": "MIT",
   "main": "./dist/cli/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "romanus": "./bin/romanus"
+    "numeris": "./bin/numeris"
   },
   "scripts": {
     "clean": "yarpm run cli:uninstall; rm -rf dist/ coverage/",
@@ -17,7 +17,7 @@
     "build:full": "yarpm run clean && yarpm run lint && yarpm run coverage && yarpm run build:compile",
     "build": "yarpm run lint && yarpm run build:compile",
     "cli:start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/cli/index.ts",
-    "cli:test": "./bin/romanus",
+    "cli:test": "./bin/numeris",
     "cli:install": "yarpm run build:full && yarpm link",
     "cli:uninstall": "yarpm unlink"
   },

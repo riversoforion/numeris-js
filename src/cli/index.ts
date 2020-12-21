@@ -11,7 +11,7 @@ const exitBadInput = () => process.exit(2);
 const program = new Command();
 program
   .version(VERSION)
-  .description('Romanus - a roman numeral converter')
+  .description('Numeris - a roman numeral converter')
   .option('-i, --integer <number>', 'Convert the given integer value to a roman numeral', parseInt)
   .option('-r, --roman <numeral>', 'Convert the given roman numeral to an integer value')
   .option('-d, --debug', 'Debugging output')
